@@ -1,8 +1,8 @@
 package net.gloombone.aeterno.proxy.renderer.tileentity;
 
+import net.gloombone.aeterno.reference.Reference;
 import org.lwjgl.opengl.GL11;
 
-import net.gloombone.aeterno.Aeterno;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class TileEntityRenderTownPortal extends TileEntitySpecialRenderer {
 
-	private final ResourceLocation textureTownPortal = new ResourceLocation(Aeterno.MODID, "textures/model/townportal.png");
+	private final ResourceLocation textureTownPortal = new ResourceLocation(Reference.MODID, "textures/model/townportal.png");
 	
 	private int textureWidth = 64;
 	private int textureHeight = 32;

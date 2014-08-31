@@ -1,10 +1,10 @@
-package net.gloombone.aeterno.utils;
+package net.gloombone.aeterno.utility;
 
 /**
  * Generic class to represent a position or dimension.
  *
  * Work is based of Vect from the Forestry codebase
- * https://github.com/ForestryMC/ForestryMC/blob/master/forestry_common/core/forestry/core/utils/Vect.java
+ * https://github.com/ForestryMC/ForestryMC/blob/master/forestry_common/core/forestry/core/utility/Vect.java
  * ---
  *
  * Copyright 2011-2014 by SirSengir

@@ -1,14 +1,16 @@
 package net.gloombone.aeterno.blocks;
 
 import net.gloombone.aeterno.Aeterno;
+import net.gloombone.aeterno.init.ModBlocks;
+import net.gloombone.aeterno.utility.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 
-public class BlockTownPortalFoundation extends BlockTownPortalBase {
+public class BlockPortalFoundation extends BlockPortalBase {
 
-	public BlockTownPortalFoundation() {
+	public BlockPortalFoundation() {
 		super(Material.rock);
 		
 		this.setBlockBounds(0, 0, 0, 1, .5F, 1);
@@ -47,7 +49,7 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
     	// Should not allow next to 3 of the same kind either.
     	for (int x2 = -1; x2 == 1; x2 += 2) {
 			for (int z2 = -1; z2 == 1; z2 += 2) {
-				if (world.getBlock(x1+x2, y1, z1+z2).equals(Aeterno.blockTownPortalFoundation) &&
+				if (world.getBlock(x1+x2, y1, z1+z2).equals(ModBlocks.blockTownPortalFoundation) &&
 						world.getBlockMetadata(x1+x2, y1, z1+z2) != 0) {
 					// We found a block which is already in a multiblock structure in the area
 					// do not allow placement next to it.
@@ -63,8 +65,8 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
 		
 		boolean isFormed = false;
 		boolean currentStructure = true;
-		
-		System.out.println("---------- NEW ----------");
+
+        LogHelper.info("---------- NEW ----------");
 		
 		// Figure out the center of the block and based on that
 		// verify the structure of the structure
@@ -79,15 +81,15 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
 		
 		for (int i = 0; i < 5; i++) {
 			moveX = (i % 2 == 1) ? (int)Math.ceil((i+1)/2) * -1 : 0 + (int)((i+1)/2);
-			System.out.println((x1 + moveX) + " : " + lastX + " : " + Math.abs((x1 + moveX)-(lastX)));
+            LogHelper.info((x1 + moveX) + " : " + lastX + " : " + Math.abs((x1 + moveX) - (lastX)));
 
-			if (world.getBlock(x1+moveX, y1, z1).equals(Aeterno.blockTownPortalFoundation) ) {
+			if (world.getBlock(x1+moveX, y1, z1).equals(ModBlocks.blockTownPortalFoundation) ) {
 				visited++;
 				world.setBlock(x1+moveX, y1+7, z1, Blocks.wool, 13, 2);
 				blocksFound++;
 				for (int j = 0; j < 4; j++) {
 					moveZ = (j % 2 == 1) ? (int)Math.ceil((j+2)/2) * -1 : 0 + (int)((j+2)/2);
-					if (world.getBlock(x1+moveX, y1, z1+moveZ).equals(Aeterno.blockTownPortalFoundation)) {
+					if (world.getBlock(x1+moveX, y1, z1+moveZ).equals(ModBlocks.blockTownPortalFoundation)) {
 						world.setBlock(x1+moveX, y1+7, z1+moveZ, Blocks.wool, 14, 2);
 						blocksFound++;
 					}
@@ -97,7 +99,8 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
 			lastX = x1 + moveX;
 
 		}
-		System.out.println("Visited: " + visited);
+        LogHelper.info("Visited: " + visited);
+        LogHelper.info("Blocks found: " + blocksFound);
 		/*
 		// Search z axis +/-2 blocks
 		// offsetX
@@ -131,10 +134,10 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
 			System.out.println("]");
 		}
 		*/
-		
 
-		
-		System.out.println("Formed : " + isFormed);
+
+
+        LogHelper.info("Formed : " + isFormed);
 
 		return false;
 	}
@@ -147,7 +150,7 @@ public class BlockTownPortalFoundation extends BlockTownPortalBase {
 					world.setBlock(x1+x2, y1+11, z1+z2, Blocks.air);
 				}
 			}
-			System.out.println("Airspace cleared");			
+            LogHelper.info("Airspace cleared");
 		}
 	}
 }

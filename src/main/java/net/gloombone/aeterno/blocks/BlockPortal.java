@@ -7,8 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockTownPortal extends BlockContainer {
-	public BlockTownPortal() {
+public class BlockPortal extends BlockTileEntityAeterno {
+	public BlockPortal() {
 		// Should be changed to something more steady later on.
 		super(Material.ground);
 	}

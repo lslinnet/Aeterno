@@ -1,4 +1,4 @@
-package net.gloombone.aeterno.utils;
+package net.gloombone.aeterno.utility;
 
 /**
  * Created by lslinnet on 23/06/14.
@@ -7,7 +7,7 @@ package net.gloombone.aeterno.utils;
  * both for village creation and multi-block structure verification.
  *
  * Based of Schemata from the Forestry codebase
- * https://github.com/ForestryMC/ForestryMC/blob/master/forestry_common/core/forestry/core/utils/Schemata.java
+ * https://github.com/ForestryMC/ForestryMC/blob/master/forestry_common/core/forestry/core/utility/Schemata.java
  *
  * ---
  *

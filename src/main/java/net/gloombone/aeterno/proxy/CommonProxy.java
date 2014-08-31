@@ -1,6 +1,6 @@
 package net.gloombone.aeterno.proxy;
 
-public class CommonProxy {
+public abstract class CommonProxy implements IProxy {
 	public void registerProxies() {
 		
 	}

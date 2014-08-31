@@ -1,5 +1,5 @@
 itemGroup.aeternoTab=Aeterno
 
-tile.blockTownPortal.name=Town Portal
+tile.aeterno:blockTownPortal.name=Town Portal
 
-item.itemPortalKey.name=Portal Key
+item.aeterno:itemPortalKey.name=Portal Key

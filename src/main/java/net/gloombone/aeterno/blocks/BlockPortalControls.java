@@ -2,9 +2,9 @@ package net.gloombone.aeterno.blocks;
 
 import net.minecraft.block.material.Material;
 
-public class BlockTownPortalControls extends BlockTownPortalBase {
+public class BlockPortalControls extends BlockPortalBase {
 
-	public BlockTownPortalControls() {
+	public BlockPortalControls() {
 		super(Material.rock);
 	}
 
